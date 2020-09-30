@@ -88,7 +88,7 @@ namespace Projekt_1
                         if (matte == 10)
                         {
                             Console.WriteLine("Rätt svar");
-                            Console.WriteLine("Detta var slutet av denna frågesport du har vinnit 30$");
+                            Console.WriteLine("Detta var slutet av denna frågesport du har vunnit 30$");
                         }
                     }
                     else if (svar11 == "stanna" || svar11 == "jag vill stanna här")
@@ -101,21 +101,6 @@ namespace Projekt_1
             {
                 Console.WriteLine("Här får du dina 10$");
             }
-
-
-            //kontrolerar svar och svarar
-
-
-
-
-
-
-
-
-
-
-
-
             //om inget stämer åvan så förlorar man
             else
             {
