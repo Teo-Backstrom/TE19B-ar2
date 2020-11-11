@@ -51,7 +51,7 @@ namespace Exempel_2
                     case "3":
                         Console.WriteLine("Tack för idag Hejdå");
                         break;
-
+                    //om inget stämmer
                     default:
                         Console.WriteLine("Förstår inte vad du menar försök igen");
                         break;
