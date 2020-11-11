@@ -21,4 +21,5 @@ namespace test_2
             Console.WriteLine(summa);
         }
     }
+
 }
