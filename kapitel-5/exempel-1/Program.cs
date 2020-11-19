@@ -17,7 +17,7 @@ namespace exempel_1
             string[] länder = new string[2];
 
             //Skapa en annan array av 3 tal
-            int[] årtal = new string[3];
+            int[] årtal = new int[3];
 
             //Fylla en array
             länder[0] = "FRANKRIKE";
