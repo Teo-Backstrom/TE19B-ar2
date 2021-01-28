@@ -29,6 +29,16 @@ namespace sökLandICSVfil
                     Console.WriteLine(rad);
                     string[] delar = rad.Split(',');
 
+                    if (sökterm == delar[2].Substring(0, sökterm.Length))
+                    {
+                        Console.WriteLine(rad);
+                    }
+
+                    /* foreach (var del in delar)
+                     {
+
+                     }*/
+
                 }
             }
             else
