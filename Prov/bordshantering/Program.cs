@@ -12,7 +12,10 @@ namespace bordshantering
             string filnamn = "centralbord.csv";
             string tomtBordBeskrivning = "0,Inga gäster";
             string[] bordsInformation; //array för att lagra bokningar
-            bool flagga = true;
+            string menyVal = "";
+            string antalGäster = "";
+            string bordNamn = "";
+            string bordNr = "";
 
 
             //Presentera programmeet för användaren
@@ -45,14 +48,14 @@ namespace bordshantering
             //skriv ut huvudmenyn
 
 
-            while (flagga == true)
+            while (menyVal != "4")
             {
                 Console.WriteLine("Välj alternativ");
                 Console.WriteLine("1. Visa alla bord");
                 Console.WriteLine("2. Lägg till/ändra bordsinformation");
                 Console.WriteLine("3. markera bord tomt");
                 Console.WriteLine("4. Avsluta");
-                string menyVal = Console.ReadLine();
+                menyVal = Console.ReadLine();
 
                 switch (menyVal)
                 {
@@ -70,10 +73,10 @@ namespace bordshantering
                                 //borde rhar en bokning
                                 //plocka namn och antal gäster
                                 string[] delar = bordsInformation[i].Split(",");
-                                string antalGäster = delar[0];
-                                string namn = delar[1];
+                                antalGäster = delar[0];
+                                bordNamn = delar[1];
                                 totaltAntalGäster += int.Parse(antalGäster);
-                                Console.WriteLine($"bord {i + 1} - Namn:{namn}, antal gäster:{antalGäster}");
+                                Console.WriteLine($"bord {i + 1} - Namn:{bordNamn}, antal gäster:{antalGäster}");
 
                             }
                         }
@@ -83,15 +86,66 @@ namespace bordshantering
                         break;
 
                     case "2":
+                        //fråga bords nummer
+
+                        Console.WriteLine("Vilket bordsnummer vill du ändra på?");
+                        while (true)
+                        {
+                            bordNr = Console.ReadLine();
+                            //tryparse
+                            if (int.Parse(bordNr) <= 0 || int.Parse(bordNr) > antalBord)
+                            {
+                                Console.WriteLine("fel försök igen icke giltigt");
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        //fråga namn
+                        Console.WriteLine("i vilket namn");
+                        bordNamn = Console.ReadLine();
+
+                        //fråga antal gäster
+                        Console.WriteLine("hur många gäster är det");
+                        antalGäster = Console.ReadLine();
+                        //vad händer om man mater fel antal gäster
+
+                        //spara i arrayn
+                        bordsInformation[int.Parse(bordNr) - 1] = $"{antalGäster},{bordNamn}";
+                        //spara i filen
+                        File.WriteAllLines(filnamn, bordsInformation);
 
                         break;
 
                     case "3":
 
+                        //fråga bords nummer
+
+                        Console.WriteLine("Vilket bordsnummer vill du ändra på?");
+                        while (true)
+                        {
+                            bordNr = Console.ReadLine();
+                            //tryparse
+                            if (int.Parse(bordNr) <= 0 || int.Parse(bordNr) > antalBord)
+                            {
+                                Console.WriteLine("fel försök igen icke giltigt");
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        //spara i arrayn
+                        bordsInformation[int.Parse(bordNr) - 1] = tomtBordBeskrivning;
+                        //spara i filen
+                        File.WriteAllLines(filnamn, bordsInformation);
+
                         break;
 
                     case "4":
-                        flagga = false;
                         break;
 
                     default:
