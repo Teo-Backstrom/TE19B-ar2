@@ -23,7 +23,7 @@ namespace Filhantering2
             {
                 if (rad.Substring(0, 1) == sökterm)
                 {
-                    Console.WriteLine(counter + "" + rad);
+                    Console.WriteLine(counter + " " + rad);
                     counter++;
                 }
 
