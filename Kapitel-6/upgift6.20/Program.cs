@@ -32,6 +32,15 @@ namespace upgift6._20
                 }
             }
         }
+
+        /// <summary>
+        /// Adderar tre heltal
+        /// </summary>
+        /// <param name="tal1">Det ena talet</param>
+        /// <param name="tal2">Det andra talet</param>
+        /// <param name="tal3">Det tredje talet</param>
+        /// <returns>Summan av talen</returns>
+
         static void MenyAddera()
         {
             Console.WriteLine("skriv 3 tal");
@@ -43,6 +52,12 @@ namespace upgift6._20
 
         }
 
+        /// <summary>
+        /// får ut det största talet av 2 tal
+        /// </summary>
+        /// <param name="tal1">Det ena talet</param>
+        /// <param name="tal2">Det andra talet</param>
+        /// <returns>största talet</returns>
         static void MenyStörst()
         {
             Console.WriteLine("skriv 2 tal");
@@ -52,6 +67,12 @@ namespace upgift6._20
             Console.WriteLine(störst);
 
         }
+
+        /// <summary>
+        /// parsar string till int
+        /// </summary>
+        /// <param name="heltal">talet som returnas</param>
+        /// <returns>heltal</returns>
         static int ReadInt()
         {
             int heltal;
@@ -61,6 +82,7 @@ namespace upgift6._20
             }
             return heltal;
         }
+
 
         static int Addera(int tal1, int tal2, int tal3)
         {
